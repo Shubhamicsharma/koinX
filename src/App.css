@@ -1,38 +1,352 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Roboto+Condensed&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+.navbar{
+  font-size: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  z-index: 10;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar button{
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.timeline-button{
+  padding: 0.1rem 1rem;
+  color: #5D667B;
+  border: none;
+  background: none;
+  /* margin-right: 0.5rem; */
+}
+
+.timeline-active-button {
+  /* margin-right: 0.5rem; */
+  padding: 0.1rem 1rem;
+  background-color: #E2ECFE;
+  color: #0141cf;
+  border: none;
+  border-radius: 2rem;
+  -webkit-border-radius: 2rem;
+  -moz-border-radius: 2rem;
+  -ms-border-radius: 2rem;
+  -o-border-radius: 2rem;
+}
+
+
+.chart-header{
+  border-bottom: 1px solid #DEE1E6;
+}
+
+.chart-name{
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.rank-button{
+  background-color: #768396;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.positive-change{
+  background-color: #EBF9F4;
+  color: #14B079;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.negative-change{
+  background-color: #F1E3E2;
+  color: #E96975;
+  border: none;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.inr-price{
+  font-size: 1.1rem;
+}
+
+
+/* ************************Navigator component css**************************** */
+
+
+.options-list {
+  display: flex;
+  border-bottom: 1px solid #ccc;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  padding-bottom: 5px;
+}
+
+.option {
+  color: #3E424A;
+  font-weight: 500;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin-right: 10px;
+}
+
+.option.selected {
+  border-bottom: 3px solid blue;
+}
+
+@media screen and (max-width: 600px) {
+  .options-list {
+    overflow-x: auto;
+    width: 100%;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+
+/* ************************Navigator component css**************************** */
+
+
+
+.performance-container {
+  margin-top: 20px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.today-section {
+  margin-bottom: 20px;
+}
+
+.indicator-bar {
+  position: relative;
+  height: 20px;
+  border-radius: 10px;
+  background: linear-gradient(to right, red, orange, yellow, green);
+  overflow: hidden;
+}
+
+.indicator-marker {
+  position: absolute;
+  top: 0;
+  width: 2px;
+  height: 20px;
+  background-color: blue;
+  transform: translateX(-50%);
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 8px solid white;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.price-labels {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************Sentiments component css**************************** */
+
+
+
+.key-events,
+.analyst-estimates {
+  margin-bottom: 20px;
+}
+
+.key-events h3,
+.analyst-estimates h3 {
+  display: flex;
   align-items: center;
+}
+
+.key-events i,
+.analyst-estimates i {
+  margin-left: 10px;
+}
+
+.events-container {
+  display: flex;
+  overflow-x: auto;
+}
+
+.event {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  border-radius: 1.25rem;
+  -webkit-border-radius: 1.25rem;
+  -moz-border-radius: 1.25rem;
+  -ms-border-radius: 1.25rem;
+  -o-border-radius: 1.25rem;
+}
+
+.scroll-button {
+  width: 50px;
+  height: 100px;
+  background-color: #ccc;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+
+.estimate-container {
+  display: flex;
+  width: 100%;
+  gap: 3.5rem;
+}
+
+.circle {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.estimates {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.bar-container{
+  display: flex;
+  justify-content: start;
+}
+
+
+.bar {
+  height: 0.5rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+
+
+/* ************************About Container *********************************** */
+
+.already-holding-boxes-container{
+  height: 11rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.already-holding-boxes{
+  display: flex;
+  gap: 0.5rem;
+  height: 100%;
+  width: 50%;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+
+.box-one{
+  background: rgb(119,237,165);
+background: linear-gradient(135deg, rgba(119,237,165,1) 2%, rgba(95,204,167,1) 9%, rgba(86,192,168,1) 19%, rgba(78,181,168,1) 38%, rgba(36,123,171,1) 73%, rgba(18,97,173,1) 84%);
+}
+
+.box-two{
+  background: rgb(255,149,99);
+background: linear-gradient(135deg, rgba(255,149,99,1) 2%, rgba(253,136,93,1) 13%, rgba(251,122,86,1) 31%, rgba(242,69,59,1) 71%, rgba(241,62,56,1) 82%);
+}
+
+.box-text{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  justify-content: center;
+  color: white;
+}
+
+
+
+/* ***************************Get Startred*********************************** */
+
+.get-started-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: white;
+  text-align: center;
+}
+
+.get-started-image{
+  width: 80%;
+}
+
+
+
+/* ***************************Trending Coins*********************************** */
+
+.coin{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.coin-details{
+  display: flex;
+  align-items: center;
+}
+
+.coin img{
+  height: 1.5rem;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
